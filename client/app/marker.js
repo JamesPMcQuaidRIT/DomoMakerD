@@ -18,8 +18,8 @@ const handleDomo = (e) => {
 const DomoForm = (props) => {
     return (
     <form id="domoForm" 
-        name="domoForm"
         onSubmit={handleDomo}
+        name="domoForm"
         action="/maker"
         method="POST"
         className="domoForm"
@@ -35,7 +35,6 @@ const DomoForm = (props) => {
 };
 
 const DomoList = function(props) {
-    console.dir(props);
     if(props.domos.length === 0) {
         return (
             <div className="domoList">
@@ -64,7 +63,7 @@ const DomoList = function(props) {
 const loadDomosFromServer = () => {
     sendAjax('GET', '/getDomos', null, (data) => {
         ReactDOM.render(
-            <DomoList domos={data.domos} />, document.querySelector("#domos")
+            <DomoList domos={data.domo} />, document.querySelector("#domos")
         );
     });
 };

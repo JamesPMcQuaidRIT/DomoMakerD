@@ -21,8 +21,8 @@ var DomoForm = function DomoForm(props) {
     return React.createElement(
         "form",
         { id: "domoForm",
-            name: "domoForm",
             onSubmit: handleDomo,
+            name: "domoForm",
             action: "/maker",
             method: "POST",
             className: "domoForm"
@@ -45,7 +45,6 @@ var DomoForm = function DomoForm(props) {
 };
 
 var DomoList = function DomoList(props) {
-    console.dir(props);
     if (props.domos.length === 0) {
         return React.createElement(
             "div",
@@ -87,7 +86,7 @@ var DomoList = function DomoList(props) {
 
 var loadDomosFromServer = function loadDomosFromServer() {
     sendAjax('GET', '/getDomos', null, function (data) {
-        ReactDOM.render(React.createElement(DomoList, { domos: data.domos }), document.querySelector("#domos"));
+        ReactDOM.render(React.createElement(DomoList, { domos: data.domo }), document.querySelector("#domos"));
     });
 };
 
